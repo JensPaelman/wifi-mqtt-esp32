@@ -1,10 +1,10 @@
 #include "WiFi.h"
 #include "PubSubClient.h" //pio lib install "knolleary/PubSubClient"
 
-#define SSID          "Techtile"
-#define PWD           "Techtile229"
+#define SSID          "IB3"
+#define PWD           "ingenieursbeleving3"
 
-#define MQTT_SERVER   "10.128.48.25"
+#define MQTT_SERVER   "192.168.0.190"
 #define MQTT_PORT     1883
 
 #define LED_PIN       2
@@ -66,7 +66,7 @@ void callback(char *topic, byte *message, unsigned int length)
 
   // If a message is received on the topic esp32/output, you check if the message is either "on" or "off".
   // Changes the output state according to the message
-  if (String(topic) == "esp32/output")
+  if (String(topic) == "tag")
   {
     Serial.print("Changing output to ");
     if (messageTemp == "on")
